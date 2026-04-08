@@ -1,10 +1,14 @@
+import React from "react";
+import ReactDOM from "react-dom/client"
+
 // react code
 
 // create an element + content using React
 const heading = React.createElement("h1", {id: 'heading', xyz: 'attribute'}, "Hellow world from React...!!");
 
 // create Root element in the react dom
-const root = ReactDOM.createRoot(document.getElementById('root'))
+// createRoot deprecated after 17 so that we need to use react-dom/client to support this
+const root = ReactDOM.createRoot(document.getElementById("root"))
 
 // inject the content into the root
 root.render(heading)
