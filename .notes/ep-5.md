@@ -35,3 +35,12 @@
 
     - normal js varibale
       const variablename = [];
+
+# useState
+  - when ever the useState variable value changes, react will re-render the whole component with reconciliation (react triggers reconciliation cycle)
+   - only updates its own component, not the parent. 
+   for example if have my Header component inside App
+
+   App -> Header -> Header hook (changes) - react updates only the Header component, not its parent(App) unlike Angular
+
+# virtual DOM -> Object representation of element 

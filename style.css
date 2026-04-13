@@ -80,3 +80,21 @@ p, h2, h3, h4, h5, h6 {
 .pb-2 {
     padding-bottom: 16px;
 }
+
+.loader-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* background-color: ; */
+}
+
+ .shimmer-card {
+    width: 300px;
+    height: 400px;
+    background-color: rgb(195, 205, 214);
+}
+
+.search {
+    display: flex;
+    gap: 4px;
+}
