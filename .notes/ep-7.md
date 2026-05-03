@@ -3,6 +3,18 @@
   - if no dependency array => useEffect is called on every render
   - if dependency array is empty => useEffect will called on initial render (only one time)
   - if dependency array has state variable mention inside it => useEffect will get called each time when the variable is updated
+  - can have multiple useEffect in one single component
+
+  if i have any timer attached to the useeffect
+    useEffect(() => {
+        const timer = setInterval(() => { log },1000 ),
+
+        // return method
+        return () => {
+            // will get called once the component is unmounted / remove from the dom / change the view
+            clearInterval(timer)
+        }
+    } , [])
 
 
  useEffect( () => {}, dependency array )
