@@ -12,7 +12,7 @@ we can make an api call and render the data in two ways
 # useEffect Hook
   - useEffect is a js function, which takes 2 arguments
   - will gets called once after the component renders
-     useEffect(callback fn, [])
+     useEffect(callback fn, [dependency array])
 
 # useState
   - when ever the useState variable value changes, react will re-render the whole component with reconciliation (react triggers reconciliation cycle)

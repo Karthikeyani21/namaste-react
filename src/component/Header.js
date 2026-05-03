@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 export const Header = () => {
 
@@ -13,9 +14,9 @@ export const Header = () => {
             </div>
             <div className="nav-item">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact Us</li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact">Contact Us</Link></li>
                     <li>Cart</li>
                     <button onClick={() => {
                         setBtnName(btnName == "Login" ? "Logout" : "Login")

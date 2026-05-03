@@ -27,6 +27,7 @@
   # useState()
     - state variable
        const [variableName] = useState(defaultValue)
+    - used to create local state variable inside functional component
 
     - whenever the state variable changes/updates, React will re-render the component
        // to update the variable

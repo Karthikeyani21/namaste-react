@@ -26,6 +26,12 @@ p, h2, h3, h4, h5, h6 {
     }
 }
 
+.footer {
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: rgba(75, 49, 53, 0.2) 0px 7px 29px 0px;
+}
+
 .nav-item {
     > ul {
        display: flex;
@@ -97,4 +103,22 @@ p, h2, h3, h4, h5, h6 {
 .search {
     display: flex;
     gap: 4px;
+}
+
+.food-card {
+    gap: 20px;
+    .food-img {
+        width: 200px;
+        height: 170px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 16px;
+    }
+
+    .food-detail {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        justify-content: center;
+    }
 }
