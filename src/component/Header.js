@@ -5,7 +5,7 @@ export const Header = () => {
 
     const [btnName, setBtnName] = useState("Login")
     return (
-        <div className="header">
+        <div className="header flex justify-between items-center p-2 rounded-s-lg">
             <div className="header-detail">
                 <img className="logo" width="80px" height="80px"
                      src="http://png.pngtree.com/png-vector/20220727/ourmid/pngtree-food-logo-png-image_6089719.png" 
@@ -18,7 +18,7 @@ export const Header = () => {
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact">Contact Us</Link></li>
                     <li>Cart</li>
-                    <button onClick={() => {
+                    <button className="px-4 py-2 bg-sky-500 rounded-md text-white" onClick={() => {
                         setBtnName(btnName == "Login" ? "Logout" : "Login")
                     }}>{btnName}</button>
                 </ul>

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 p, h2, h3, h4, h5, h6 {
     margin: 0px;
 }
@@ -8,11 +12,7 @@ p, h2, h3, h4, h5, h6 {
 
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     /* border: 1px solid black; */
-    padding: 8px;
     border-radius: 8px;
     box-shadow: rgba(75, 49, 53, 0.2) 0px 7px 29px 0px;
 
