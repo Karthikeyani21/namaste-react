@@ -3,6 +3,7 @@ import { resList } from "../utils/mock";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
+import { highlightRes } from "./RestroCards";
 
 export const RestroContainer = () => {
     // state variable - powerful 
@@ -10,6 +11,8 @@ export const RestroContainer = () => {
     const [filteredResList, setFilteredResList] = useState([])
 
     const [searchValue, setSearchValue] = useState("");
+
+    const HighlightResCard = highlightRes(RestroCards)
 
     const fetchData = async () => {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0381896&lng=80.1565461&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
@@ -49,7 +52,11 @@ export const RestroContainer = () => {
     
            { filteredResList.map((restaurant) => {
                 const res = restaurant.info;
-                return ( <Link to={"/restaurants/" + res.id}  key={res.id}><RestroCards resData={res}/></Link> )
+                console.log(res)
+                return (
+                <Link to={"/restaurants/" + res.id}  key={res.id}>
+                    {res.sla.deliveryTime < 35 ? (<HighlightResCard resData={res}/>) : (<RestroCards resData={res}/>)}
+                </Link> )
             })}
         </div>
        </>

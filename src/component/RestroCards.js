@@ -14,4 +14,18 @@ const RestroCards = ({resData}) => {
     )
 }
 
+// Higher order function
+
+export const highlightRes = (RestroCards) => {
+    return (props) => {
+        return (
+            <>
+               <p>component highlighted</p>
+               <RestroCards {...props}/>
+            </>
+        )
+    }
+
+}
+
 export default RestroCards;

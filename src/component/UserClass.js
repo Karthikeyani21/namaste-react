@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from '../utils/UserContext';
 
 class UserClass extends React.Component {
 
@@ -24,15 +25,19 @@ class UserClass extends React.Component {
         const {count} = this.state;
         return (
             <>
-              <h3>Count : {this.state.count}</h3>
-              <button onClick={() => {
-                  this.setState({
-                     count: this.state.count + 1
-                  })
-              }}>increment</button>
-              {/* <h3>Count : {count}</h3> */}
-              <h1>from class based component</h1>
-              {this.props.name}
+                {/* accessing context from class component */}
+                <UserContext.Consumer>
+                                {(value) => (<h1 className="font-bold">{value.loggedInUser}</h1>)}
+                </UserContext.Consumer>
+                <h3>Count : {this.state.count}</h3>
+                <button onClick={() => {
+                    this.setState({
+                       count: this.state.count + 1
+                    })
+                }}>increment</button>
+                {/* <h3>Count : {count}</h3> */}
+                <h1>from class based component</h1>
+                {this.props.name}
             </>
         )
     }
