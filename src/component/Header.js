@@ -1,12 +1,16 @@
 import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 export const Header = () => {
 
     const [btnName, setBtnName] = useState("Login");
     // accessing context
     const userName = useContext(UserContext);
+
+    // redux selector
+    const cartItems = useSelector((store) => store?.cart?.items)
 
     return (
         <div className="header flex justify-between items-center p-2 rounded-s-lg">
@@ -21,7 +25,7 @@ export const Header = () => {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact">Contact Us</Link></li>
-                    <li>Cart</li>
+                    <li><Link to="/cart">Cart ({cartItems.length})</Link></li>
                     <button className="px-4 py-2 bg-sky-500 rounded-md text-white" onClick={() => {
                         setBtnName(btnName == "Login" ? "Logout" : "Login")
                     }}>{btnName}</button>

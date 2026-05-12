@@ -24,3 +24,13 @@
 - React reconsilation
 - virtual DOM vs Actual DOM
 - diff algorithm
+
+
+# Redux Toolkit
+  - install @reduxjs/toolkit and react-redux
+  - build our store
+  - connect out store to application
+  - slice
+  - dispatch action
+  - selector
+  - 

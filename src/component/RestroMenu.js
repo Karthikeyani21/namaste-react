@@ -27,8 +27,8 @@ const RestroMenu = () => {
 
     return (
         <div className="">
-           <h1 className="font-bold font-medium text-[30px]">{resInfo}</h1>
-           <div>
+           <h1 className="font-bold font-medium text-[30px] text-center pb-4">{resInfo}</h1>
+           <div className="flex flex-col items-center">
                {resMenu.map((item, index) => {
                   return (
                      <RestaurantCategory key={index} 

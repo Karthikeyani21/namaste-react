@@ -14,8 +14,9 @@ const RestaurantCategory = ({data, showItem, setShowIndex}) => {
                   <h2 className="font-bold">{data.title}({data.itemCards.length})</h2> <span> ⬇️</span>
                </div>
                 {/* Accordion */}
-               {showItem && <CategoryItem info={data.itemCards}/>}
+               {showItem && <CategoryItem info={data.itemCards} showBtn={true}/>}
            </div>
+
 
         </>
     )

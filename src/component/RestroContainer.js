@@ -55,7 +55,7 @@ export const RestroContainer = () => {
                 console.log(res)
                 return (
                 <Link to={"/restaurants/" + res.id}  key={res.id}>
-                    {res.sla.deliveryTime < 35 ? (<HighlightResCard resData={res}/>) : (<RestroCards resData={res}/>)}
+                    {(<RestroCards resData={res}/>)}
                 </Link> )
             })}
         </div>

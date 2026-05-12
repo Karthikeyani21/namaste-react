@@ -10,6 +10,9 @@ import Contact from "./component/Contact";
 import Error from "./component/Error";
 import RestroMenu from "./component/RestroMenu";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./component/Cart";
 
 const AppLayout = () =>{
     console.log("app renders")
@@ -20,11 +23,13 @@ const AppLayout = () =>{
     },[])
     return (
         <div>
-          <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
-            <Header/>
-            {/* dynamic component rendering based on route url  */}
-             <Outlet/>
-          </UserContext.Provider>
+            <Provider store={appStore}>
+                <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
+                  <Header/>
+                  {/* dynamic component rendering based on route url  */}
+                   <Outlet/>
+                </UserContext.Provider>
+            </Provider>
         </div>
     )
 }
@@ -51,6 +56,10 @@ const routeConfig = createBrowserRouter([
             {
                 path: '/restaurants/:resId',
                 element: <RestroMenu/>
+            },
+            {
+                path: '/cart',
+                element: <Cart/>
             }
         ]
     },
