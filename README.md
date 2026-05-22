@@ -33,4 +33,17 @@
   - slice
   - dispatch action
   - selector
-  - 
+
+# setting up testing in our app
+  - install React Testing library
+  - install jest
+  - install babel dependency
+  - configure babel
+  - configure Parcel config file to disable default babel transpilation 
+  - Jest configuration 
+        - npx jest --init (deprecated)
+        - npm init jest@latest
+  - install jsDOM library
+  - Install @babel/preset-react - to make js work in the test case
+  - include @babel/preset-react inside babel config file
+  - npm i -D @testing-library/jest-dom (to support assertion in jsx)

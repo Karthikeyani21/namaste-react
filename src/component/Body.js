@@ -8,12 +8,12 @@ export const Body = () =>{
 
     return (
         <div>
-            <input className="border"
+            {/* <input className="border"
                value={loggedInUser}
                onChange={(e)=> {
                   setUserName(e.target.value)
                }}
-            />
+            /> */}
 
             <Search/>
             <RestroContainer></RestroContainer>

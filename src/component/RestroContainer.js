@@ -20,7 +20,6 @@ export const RestroContainer = () => {
         console.log("res list",json?.data.cards[4].card?.card?.gridElements?.infoWithStyle?.restaurants);
         setRestaurantList(json?.data.cards[4].card?.card?.gridElements?.infoWithStyle?.restaurants)
         setFilteredResList(json?.data.cards[4].card?.card?.gridElements?.infoWithStyle?.restaurants)
-
     }
 
     useEffect(()=> {
@@ -34,16 +33,15 @@ export const RestroContainer = () => {
        <>
           <div style={{display:"flex", gap:"16px"}}>
               <div className="search">
-                <input className="search-box" value={searchValue} onChange={(event)=>{ setSearchValue(event.target.value)}}></input>
-                <button className="btn" onClick={ () => {
-                    console.log(searchValue);
+                <input data-testid="inputText" className="border border-black" value={searchValue} onChange={(event)=>{ setSearchValue(event.target.value)}}></input>
+                <button className="border border-black py-2 px-3 m-2" onClick={ () => {
                     const filteredValue = restaurantList.filter((res)=> res.info.name.toLowerCase().includes(searchValue.toLowerCase()));
                     setFilteredResList(filteredValue)
                 }}>Search</button>
               </div>
 
-             <button style={{cursor: "pointer"}}  onClick={() => {
-                const filteredData = restaurantList.filter(res => res.info.avgRating > 4)
+             <button style={{cursor: "pointer"}} className="border border-black py-2 px-3 m-2"  onClick={() => {
+                const filteredData = restaurantList.filter(res => res.info.avgRating > 4.2)
                 // update the state variable
                 setFilteredResList(filteredData)
              }} >Top Rated Restaurant</button>
@@ -52,7 +50,6 @@ export const RestroContainer = () => {
     
            { filteredResList.map((restaurant) => {
                 const res = restaurant.info;
-                console.log(res)
                 return (
                 <Link to={"/restaurants/" + res.id}  key={res.id}>
                     {(<RestroCards resData={res}/>)}
